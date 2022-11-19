@@ -1,10 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className='container-fluid pt-3 shadow d-flex justify-content-between pe-5'>
+class PriceCard extends Component{
+  render(){
+    return <div className="container main-inner-box p-0 shadow">
+    <div className="inner-top fs-3 mb-4">Free</div>
+    <div className="inner-price fs-4"> <span className='price fw-bolder fs-1'>$0</span> / mo</div>
+    <div className="inner-des px-5">10 users included 2 GB of storage Email support Help center access</div>
+    <button className='btn btn-outline-primary mt-4 inner-btn'>Sign up for free</button>
+  </div>
+  }
+}
+
+class Header extends Component{
+  render(){
+    return <header className='container-fluid pt-3 shadow d-flex justify-content-between pe-5'>
         <div className="logo ms-3 fs-5">Company Name</div>
         <div className="boxes mt-1">
           <ul className='main-ul'>
@@ -16,35 +27,12 @@ function App() {
           </ul>
         </div>
       </header>
-      <main className='d-flex flex-column text-center pt-5 mt-5 gap-3'>
-        <div className="main-box1 fs-1 mt-2">
-          Pricing
-        </div>
-        <div className="main-box2 fs-5">
-        Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.
-        </div>
-        <div className="main-box3 d-flex">
-          <div className="container main-inner-box p-0 shadow">
-            <div className="inner-top fs-3 mb-4">Free</div>
-            <div className="inner-price fs-4"> <span className='price fw-bolder fs-1'>$0</span> / mo</div>
-            <div className="inner-des px-5">10 users included 2 GB of storage Email support Help center access</div>
-            <button className='btn btn-outline-primary mt-4 inner-btn'>Sign up for free</button>
-          </div>
-          <div className="container main-inner-box p-0 shadow">
-            <div className="inner-top fs-3 mb-4">Pro</div>
-            <div className="inner-price fs-4"> <span className='price fw-bolder fs-1'>$15</span> / mo</div>
-            <div className="inner-des px-5">20 users included 10 GB of storage Email support Help center access</div>
-            <button className='btn btn-primary mt-4 inner-btn'>Sign up for free</button>
-          </div>
-          <div className="container main-inner-box p-0 shadow">
-            <div className="inner-top fs-3 mb-4">Enterprise</div>
-            <div className="inner-price fs-4"> <span className='price fw-bolder fs-1'>$29</span> / mo</div>
-            <div className="inner-des px-5">30 users included 15 GB of storage Email support Help center access</div>
-            <button className='btn btn-primary mt-4 inner-btn'>Sign up for free</button>
-          </div>
-        </div>
-      </main>
-      <footer>
+  }
+}
+
+class Footer extends Component{
+  render(){
+    return <footer>
         <div className="footer-box-1">
           <div className="img-box">
             <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="b" />
@@ -75,6 +63,33 @@ function App() {
           <a href="#">Teams</a>
         </div>
       </footer>
+  }
+}
+
+class Main extends Component{
+  render(){
+    return <main className='d-flex flex-column text-center pt-5 mt-5 gap-3'>
+        <div className="main-box1 fs-1 mt-2">
+          Pricing
+        </div>
+        <div className="main-box2 fs-5">
+        Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.
+        </div>
+        <div className="main-box3 d-flex">
+          <PriceCard/>
+          <PriceCard/>
+          <PriceCard/>
+        </div>
+      </main>
+  }
+}
+
+function App() {
+  return (
+    <div className="App">
+      <Header/>
+      <Main/>
+      <Footer/>
     </div>
   );
 }
