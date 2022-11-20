@@ -6,10 +6,17 @@ import Footer from './components/footer/footer';
 import Main from './components/main/main';
 
 
+const listItems ={   
+    one:"Features",
+    two: "Enterprise",
+    three: "Support",
+    four: "Pricing"
+    }
+const hi = "";
 function App() {
   return (
     <div className="App">
-      <Header/>
+      <Header data = { listItems} />
       <Main/>
       <Footer/>
     </div>
