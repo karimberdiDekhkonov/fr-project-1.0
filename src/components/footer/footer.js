@@ -1,4 +1,31 @@
 import { Component } from "react";
+import FooterRows from "./FooterRows/FooterRows";
+
+const footerList = [
+  {
+    first: "Features",
+    second: "Cool stuff",
+    third: "Random fetaures",
+    fourth: "Team fetaures",
+    fifth: "Stuff for developers",
+    sixth: "Another one",
+    seventh: "Last time",
+  },
+  {
+    first: "Resources",
+    second: "Resource",
+    third: "Resource name",
+    fourth: "Another resource",
+    fifth: "Final resource",
+  },
+  {
+    first: "About",
+    second: "Team",
+    third: "Locations",
+    fourth: "Privacy",
+    fifth: "Teams",
+  }
+]
 
 class Footer extends Component{
     render(){
@@ -9,29 +36,9 @@ class Footer extends Component{
             </div>
             <div className="year-box">© 2017-2018</div>
           </div>
-          <div className="footer-box-2">
-            <a href='#' className="fw-bolder fs-4">Features</a>
-            <a href="#">Cool stuff</a>
-            <a href="#">Random fetaures</a>
-            <a href="#">Team fetaures</a>
-            <a href="#">Stuff for developers</a>
-            <a href="#">Another one</a>
-            <a href="#">Last time</a>
-          </div>
-          <div className="footer-box-3">
-            <a href='#' className="fw-bolder fs-4">Resources</a>
-            <a href="#">Resource</a>
-            <a href="#">Resource name</a>
-            <a href="#">Another resource</a>
-            <a href="#">Final resource</a>
-          </div>
-          <div className="footer-box-4">
-            <a href='#' className="fw-bolder fs-4">About</a>
-            <a href="#">Team</a>
-            <a href="#">Locations</a>
-            <a href="#">Privacy</a>
-            <a href="#">Teams</a>
-          </div>
+          {
+            footerList.map((value) => <FooterRows data = {value} />)
+          }
         </footer>
     }
   }
